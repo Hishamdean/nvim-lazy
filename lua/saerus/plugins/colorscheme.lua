@@ -1,7 +1,16 @@
+-- return {
+--   "rebelot/kanagawa.nvim",
+--   priority = 1000,
+--   config = function()
+-- 	  vim.cmd([[colorscheme kanagawa]])
+--   end,
+-- }
+
 return {
-  "rebelot/kanagawa.nvim",
+  "AlexvZyl/nordic.nvim",
+  lazy = false,
   priority = 1000,
   config = function()
-	  vim.cmd([[colorscheme kanagawa]])
+    require("nordic").load()
   end,
 }

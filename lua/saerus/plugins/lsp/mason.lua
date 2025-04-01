@@ -26,6 +26,7 @@ return {
 
     mason_lspconfig.setup({
       -- list of servers for mason to install
+      automatic_installation = false,
       ensure_installed = {
         "ts_ls",
         "html",
@@ -37,6 +38,10 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
+        "templ",
+        "gopls",
+        "golangci_lint_ls",
+        "ast_grep"
       },
     })
 

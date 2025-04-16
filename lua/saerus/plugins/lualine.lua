@@ -84,6 +84,12 @@ return {
           { "encoding" },
           { "fileformat" },
           { "filetype" },
+          {
+            "location"
+          }
+        },
+        lualine_c = {
+          { "filename", path = 1, }
         },
       },
     })

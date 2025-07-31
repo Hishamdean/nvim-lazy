@@ -4,7 +4,7 @@ return {
   config = function()
     local lualine = require("lualine")
     local lazy_status = require("lazy.status") -- to configure lazy pending updates count
-    -- local lualine_kanagawa = require("lualine.themes.kanagawa")
+    local lualine_kanagawa = require("lualine.themes.kanagawa")
 
     -- local colors = {
     --   blue = "#65D1FF",
@@ -50,30 +50,30 @@ return {
     --   },
     -- }
 
-    -- local new_colors = {
-    --   blue = "#658594",
-    --   green = "#76946A",
-    --   violet = "#957FB8",
-    --   yellow = "#DCA561",
-    --   black = "#000000",
-    -- }
+    local new_colors = {
+      blue = "#658594",
+      green = "#76946A",
+      violet = "#957FB8",
+      yellow = "#DCA561",
+      black = "#000000",
+    }
 
-    -- lualine_kanagawa.normal.a.bg = new_colors.blue
-    -- lualine_kanagawa.insert.a.bg = new_colors.green
-    -- lualine_kanagawa.visual.a.bg = new_colors.violet
-    -- lualine_kanagawa.command = {
-    --   a = {
-    --     gui = "bold",
-    --     bg = new_colors.yellow,
-    --     fg = new_colors.black,
-    --   },
-    -- }
+    lualine_kanagawa.normal.a.bg = new_colors.blue
+    lualine_kanagawa.insert.a.bg = new_colors.green
+    lualine_kanagawa.visual.a.bg = new_colors.violet
+    lualine_kanagawa.command = {
+      a = {
+        gui = "bold",
+        bg = new_colors.yellow,
+        fg = new_colors.black,
+      },
+    }
 
     -- configure lualine with modified theme
     lualine.setup({
-      -- options = {
-      --    theme = my_lualine_theme,
-      -- },
+      options = {
+        theme = lualine_kanagawa,
+      },
       sections = {
         lualine_x = {
           {

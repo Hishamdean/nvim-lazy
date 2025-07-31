@@ -6,12 +6,16 @@ return {
     bigfile = { enabled = true },
     terminal = {
       win = {
-        style = "terminal",
+        style = "minimal",
         position = "float",
+        border = "rounded",
+        winhl = "Normal:Normal",
       },
       bo = {
         filetype = "snacks_terminal",
-        wo = {},
+        wo = {
+          winblend = 10,
+        },
         keys = {
           q = "hide",
           term_normal = {
@@ -46,9 +50,9 @@ return {
     },
     dashboard = {
       width = 60,
-      row = nil, -- dashboard position. nil for center
-      col = nil, -- dashboard position. nil for center
-      pane_gap = 4, -- empty columns between vertical panes
+      row = nil,                                                                   -- dashboard position. nil for center
+      col = nil,                                                                   -- dashboard position. nil for center
+      pane_gap = 4,                                                                -- empty columns between vertical panes
       autokeys = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ", -- autokey sequence
       preset = {
         pick = nil,
@@ -68,12 +72,12 @@ return {
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
         -- Used by the `header` section
-        header = [[
-          ███████  █████  ███████ ██████  ██    ██ ███████
-          ██      ██   ██ ██      ██   ██ ██    ██ ██     
-          ███████ ███████ █████   ██████  ██    ██ ███████
-               ██ ██   ██ ██      ██   ██ ██    ██      ██
-          ███████ ██   ██ ███████ ██   ██  ██████  ███████]],
+        -- header = [[
+        --   ███████  █████  ███████ ██████  ██    ██ ███████
+        --   ██      ██   ██ ██      ██   ██ ██    ██ ██
+        --   ███████ ███████ █████   ██████  ██    ██ ███████
+        --        ██ ██   ██ ██      ██   ██ ██    ██      ██
+        --   ███████ ██   ██ ███████ ██   ██  ██████  ███████]],
       },
       -- item field formatters
       formats = {
@@ -101,8 +105,8 @@ return {
         end,
       },
       sections = {
-        { section = "header" },
-        { section = "keys", gap = 1, padding = 1 },
+        -- { section = "header" },
+        { section = "keys",   gap = 1, padding = 1 },
         { section = "startup" },
       },
     },
@@ -266,8 +270,8 @@ return {
         Snacks.toggle.diagnostics():map("<leader>ud")
         Snacks.toggle.line_number():map("<leader>ul")
         Snacks.toggle
-          .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
-          :map("<leader>uc")
+            .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
+            :map("<leader>uc")
         Snacks.toggle.treesitter():map("<leader>uT")
         Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
         Snacks.toggle.inlay_hints():map("<leader>uh")
